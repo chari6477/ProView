@@ -22,7 +22,7 @@ public class FileSaver extends BaseObject
 		}
 		if(readProperty("platform").equals("IE")){
 			try {
-				Runtime.getRuntime().exec("src/main/resources/Download.exe");
+				Runtime.getRuntime().exec("src/test/resources/Download.exe");
 			} catch (IOException e) {
 				System.out.println("Exception Occured While Saving File");
 			}

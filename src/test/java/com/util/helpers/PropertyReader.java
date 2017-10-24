@@ -17,7 +17,7 @@ public class PropertyReader
 	{
 		try
 		{
-			FileInputStream inputStream = new FileInputStream("src/main/resources/automation.properties");
+			FileInputStream inputStream = new FileInputStream("src/test/resources/automation.properties");
 
 			properties.load(inputStream);
 		}
