@@ -17,7 +17,7 @@ Feature: Highlight
 		And I open the annotations menu
 		Then I verify that the highlight is displayed in the annotations menu
 		When I click the highlight in the annotations menu
-		Then I verify that the content contains "Author"
+		Then I verify that the content contains "Notes"
 		When I delete the highlight from the annotations menu
 		Then I verify that the highlight is not displayed in the annotations menu
 		When I open the options menu
@@ -32,7 +32,7 @@ Feature: Highlight
 		And I open the annotations menu
 		Then I verify that the highlight is displayed in the annotations menu
 		When I click the highlight in the annotations menu
-		Then I verify that the content contains "Author"
+		Then I verify that the content contains "Notes"
 		When I delete the highlight from the annotations menu
 		Then I verify that the highlight is not displayed in the annotations menu
 		When I open the options menu

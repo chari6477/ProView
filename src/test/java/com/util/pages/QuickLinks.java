@@ -57,6 +57,7 @@ public class QuickLinks extends BaseObject
 		} catch (Exception e) {
 			elm=textOnPage(quickLinkTitle);
 		}
+		System.out.println(elm.getText());
 		return elm;
 	}
 	

@@ -115,7 +115,9 @@ public class OptionsMenu extends BaseObject
 	 */
 	public void open()
 	{
+		threadWait(3);
 		clickWebElement(menuBtn());
+		threadWait(3);
 	}
 
 	/**

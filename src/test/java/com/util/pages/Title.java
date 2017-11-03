@@ -372,7 +372,7 @@ public class Title extends BaseObject
 	public void clickLink(String linkText)
 	{
 		currentTab=driver.getWindowHandle();
-		clickWebElement(textOnPage(linkText));
+		clickWebElementByActionsClass(textOnPage(linkText));
 		for(String tab:driver.getWindowHandles()){
 			if(!tab.equalsIgnoreCase(currentTab)){
 				driver.switchTo().window(tab);

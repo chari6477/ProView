@@ -1,4 +1,4 @@
-@Coress
+@Core
 Feature: Deep linking
 
 	Scenario: Core_DeepLinking

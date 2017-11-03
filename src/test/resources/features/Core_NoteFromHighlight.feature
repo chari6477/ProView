@@ -12,13 +12,13 @@ Feature: Note from highlight
   Scenario: Core_NoteFromHighlight_Pages
     And I select the "Pages" layout option
     And I close the options menu
-    When I add a highlight in the color "purple" by selecting the text "Editor and Author of Notes"
+    When I add a highlight in the color "purple" by selecting the text "Contributing Editors"
     And I open the annotations menu
     Then I verify that the highlight is displayed in the annotations menu
-	When I add a note from the highlight "Editor and Author of Notes" with the text "Core Regression"
+	When I add a note from the highlight "Contributing Editors" with the text "Core Regression"
     Then I verify that the note is displayed in the annotations menu
 	When I click the note in the annotations menu
-	Then I verify that the content contains "Author"
+	Then I verify that the content contains "Contributing Editors"
     When I delete the note from the annotations menu
     Then I verify that the note is not displayed in the annotations menu
     When I open the options menu
@@ -28,13 +28,13 @@ Feature: Note from highlight
   Scenario: Core_NoteFromHighlight_Scroll
     And I select the "Scroll" layout option
     And I close the options menu
-    When I add a highlight in the color "purple" by selecting the text "Editor and Author of Notes"
+    When I add a highlight in the color "purple" by selecting the text "Contributing Editors"
     And I open the annotations menu
     Then I verify that the highlight is displayed in the annotations menu
-	When I add a note from the highlight "Editor and Author of Notes" with the text "Core Regression"
+	When I add a note from the highlight "Contributing Editors" with the text "Core Regression"
     Then I verify that the note is displayed in the annotations menu
 	When I click the note in the annotations menu
-	Then I verify that the content contains "Author"
+	Then I verify that the content contains "Contributing Editors"
     When I delete the note from the annotations menu
     Then I verify that the note is not displayed in the annotations menu
     When I open the options menu

@@ -16,10 +16,10 @@ import cucumber.api.junit.Cucumber;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	features = {"src/test/java"},
+	features = {"src/test/resources"},
 	glue = {"com.test.stepdefinitions"},
 	plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
-	tags ={"@Coress"}
+	tags ={"@Core"}
 )
 public class ChromeRunner {
 	@BeforeClass

@@ -6,10 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.util.pages.SignIn;
+
 public class AppLauncher extends DriverFactory
 {
 	WebDriver driver = getDriver();
 	PropertyReader properties = new PropertyReader();
+	SignIn signIn = new SignIn(driver);
 
 	public AppLauncher(WebDriver driver)
 	{
@@ -24,9 +27,13 @@ public class AppLauncher extends DriverFactory
 
 	public void launchDeepLinking() throws InterruptedException
 	{
-		driver.get(
-				"https://proview.ci.thomsonreuters.com/launchapp/title/trp/periodical/auto_periodical/document/newsarticle-03/anchor/iblanchor");
+		driver.get("https://proview.ci.thomsonreuters.com/launchapp/title/trp/periodical/auto_periodical/document/newsarticle-03/anchor/iblanchor");
 		Thread.sleep(2500);
+		try {
+			signIn.clickWebElement(signIn.cookieContinueLink());
+		} catch (Exception e) {
+			System.out.println("Cookie Continue Link Not Present");
+		}
 	}
 
 	public void launchFreemium() throws InterruptedException

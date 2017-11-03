@@ -213,7 +213,7 @@ public class Library extends BaseObject
 	 */
 	public void clearSearch()
 	{
-		clickWebElement(clearBtn());
+		clickWebElementByActionsClass(clearBtn());
 	}
 
 	/**

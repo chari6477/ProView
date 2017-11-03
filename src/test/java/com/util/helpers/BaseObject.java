@@ -263,8 +263,12 @@ public class BaseObject
 	protected void clickWebElement(WebElement webElement, long timeout){
 		threadWait(1);
 		System.out.println("\nAction: Click\t\t\tWebElement: Element Found in Previous Step");
-		Actions action=new Actions(driver);
-		action.click(waitForElementToBeClickable(webElement,timeout)).build().perform();
+		if(System.getProperty("Browser").equals("IE")){
+			Actions action=new Actions(driver);
+			action.click(waitForElementToBeClickable(webElement,timeout)).build().perform();
+		}else{
+			waitForElementToBeClickable(webElement,timeout).click();
+		}
 	}
 	
 	protected void enterText(WebElement webElement, String textToEnter){
@@ -314,9 +318,9 @@ public class BaseObject
 	}
 	
 	public void clickWebElementByActionsClass(WebElement webElement){
-		threadWait(1);
+		threadWait(3);
 		Actions actions=new Actions(driver);
-		actions.click(webElement).perform();
+		actions.click(webElement).build().perform();
 	}
 	
 	public void threadWait(int seconds){
@@ -331,7 +335,12 @@ public class BaseObject
 	public boolean verifyTextOnPage(String text)
 	{
 		threadWait(3);
-		return verifyWebElementIsDisplayed("PAGE_CONTENT_XPATH",text);
+		boolean result=verifyWebElementIsDisplayed("PAGE_CONTENT_XPATH",text);
+		if(result){
+			return result;
+		}else{
+			return verifyWebElementIsDisplayed("PAGE_CONTENT1_XPATH",text);
+		}
 	}
 	
 	public WebElement textOnPage(String text){

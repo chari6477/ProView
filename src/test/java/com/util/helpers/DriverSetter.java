@@ -1,6 +1,7 @@
 package com.util.helpers;
 
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,9 +26,12 @@ public class DriverSetter
 	
 	public WebDriver setDriver()
 	{
-		System.out.println("ForkNumber\t"+System.getProperty("Browser"));
-		switch(properties.readProperty("platform"))
-		//switch(System.getProperty("Browser"))
+		
+		if(System.getProperty("Browser")==null){
+			System.setProperty("Browser", properties.readProperty("platform"));
+		}
+		System.out.println("ForkNumber\t"+System.getProperty("Browser"));	
+		switch(System.getProperty("Browser"))
 		{
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");

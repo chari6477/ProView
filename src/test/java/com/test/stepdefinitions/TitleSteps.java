@@ -1,5 +1,6 @@
 package com.test.stepdefinitions;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import com.util.helpers.DriverFactory;
@@ -151,7 +152,7 @@ public class TitleSteps extends DriverFactory
 	@Then("^I verify that the content contains \"(.*?)\"$")
 	public void i_verify_that_the_content_contains(String myText) throws InterruptedException
 	{
-		title.verifyTextOnPage(myText);
+		Assert.assertTrue(title.verifyTextOnPage(myText));
 	}
 
 	@Then("^I verify that the content does not contain \"(.*?)\"$")

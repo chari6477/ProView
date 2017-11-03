@@ -16,16 +16,28 @@ public class FileSaver extends BaseObject
 	//TODO figure out what is going on here
 	public void saveFile()
 	{
-		if(readProperty("platform").equals("chrome"))
+		if(System.getProperty("Browser").equals("chrome"))
 		{
 			System.out.println("chrome doesn't need to be manually saved");
 		}
-		if(readProperty("platform").equals("IE")){
+		if(System.getProperty("Browser").equals("IE")){
 			try {
 				Runtime.getRuntime().exec("src/test/resources/Download.exe");
 			} catch (IOException e) {
 				System.out.println("Exception Occured While Saving File");
 			}
 		}
+		if(System.getProperty("Browser").equals("firefox")){
+			System.out.println("Basha + Firefox");
+			try {
+				Runtime.getRuntime().exec("src/test/resources/Firefox_Download.exe");
+			} catch (IOException e) {
+				System.out.println("Exception Occured While Saving File");
+			}
+		}
+	}
+	
+	public void savePDF(){
+		
 	}
 }

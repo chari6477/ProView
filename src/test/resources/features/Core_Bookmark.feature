@@ -17,7 +17,7 @@ Feature: Bookmarks
 		And I open the annotations menu
 		Then I verify that the bookmark is displayed in the annotations menu
 		When I click the bookmark in the annotations menu
-		Then I verify that the content contains "Author"
+		Then I verify that the content contains "Notes"
 		When I delete the bookmark from the annotations menu
 		Then I verify that the bookmark is not displayed in the annotations menu
 		When I open the options menu
@@ -32,7 +32,7 @@ Feature: Bookmarks
 		And I open the annotations menu
 		Then I verify that the bookmark is displayed in the annotations menu
 		When I click the bookmark in the annotations menu
-		Then I verify that the content contains "Author"
+		Then I verify that the content contains "Notes"
 		When I delete the bookmark from the annotations menu
 		Then I verify that the bookmark is not displayed in the annotations menu
 		When I open the options menu

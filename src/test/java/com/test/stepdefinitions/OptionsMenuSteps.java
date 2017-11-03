@@ -31,6 +31,7 @@ public class OptionsMenuSteps extends DriverFactory
 	@When("^I open the options menu$")
 	public void i_open_the_options_menu() 
 	{
+		
 		optionsMenu.open();
 	}
 	

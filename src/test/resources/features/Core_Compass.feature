@@ -1,4 +1,4 @@
-@Coress
+@Core
 Feature: Compass
 
 	Background:
