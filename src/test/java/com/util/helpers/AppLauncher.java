@@ -13,6 +13,7 @@ public class AppLauncher extends DriverFactory
 	WebDriver driver = getDriver();
 	PropertyReader properties = new PropertyReader();
 	SignIn signIn = new SignIn(driver);
+	
 
 	public AppLauncher(WebDriver driver)
 	{
@@ -52,16 +53,25 @@ public class AppLauncher extends DriverFactory
 	public void launchIPAuthentication()
 	{
 		driver.get("https://proview.ci.thomsonreuters.com/library.html?sponsor=prTesting-DEV");
+		driver.manage().window().maximize();
+		signIn.cookieTermsAcceptance();
 	}
 	
 	public void launchIPAuthenticationWithEmail()
 	{
 		driver.get("https://proview.ci.thomsonreuters.com/library.html?sponsor=prTesting-DEV&email=proviewtester@gmail.com");
+		driver.manage().window().maximize();
+		signIn.cookieTermsAcceptance();
 	}
+	
 
 	public void launchIPPAuthentication()
 	{
 		driver.get("https://proview.ci.thomsonreuters.com/library.html?sponsor=PPETER-1");
+		driver.manage().window().maximize();
+		signIn.cookieTermsAcceptance();
+		signIn.clickWebElement(signIn.findWebElementFromPropertyName("IPPAuthentication_IAgree_Btn_XPATH"));
+		
 	}
 
 	public void launchProView() throws InterruptedException

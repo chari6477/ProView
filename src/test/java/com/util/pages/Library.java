@@ -297,9 +297,7 @@ public class Library extends BaseObject
 	
 	public void verifyDueDate()
 	{
-		System.out.println("Need to change");
-		waitForElementToBeClickable("compassDueDate", "css", 10);
-		Assert.assertTrue(verifyTextInElement("compassDueDate", "css", "DUE"));
+		Assert.assertTrue(verifyWebElementIsDisplayed("LoanedTitle_DueDate_XPATH"));
 	}
 
 	/**

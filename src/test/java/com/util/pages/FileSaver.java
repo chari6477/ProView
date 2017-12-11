@@ -20,6 +20,7 @@ public class FileSaver extends BaseObject
 		{
 			System.out.println("chrome doesn't need to be manually saved");
 		}
+		
 		if(System.getProperty("Browser").equals("IE")){
 			try {
 				Runtime.getRuntime().exec("src/test/resources/Download.exe");
@@ -27,6 +28,7 @@ public class FileSaver extends BaseObject
 				System.out.println("Exception Occured While Saving File");
 			}
 		}
+		
 		if(System.getProperty("Browser").equals("firefox")){
 			System.out.println("Basha + Firefox");
 			try {

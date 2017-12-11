@@ -7,5 +7,5 @@ Feature: IP authentication
 		When I open the title "AutomatedPeriodicalIssue3"
 		Then I verify that the content contains "The Hub Daily"
 		When I open the options menu
-		And I sign out
+		And I click on "Sair" option of Options Menu
 		Then I close the app

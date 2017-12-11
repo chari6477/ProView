@@ -35,6 +35,7 @@ public class Westlaw extends BaseObject
 	 */
 	public void clickContinueBtn()
 	{
+		threadWait(10);
 		clickWebElement(continueBtn());
 	}
 	

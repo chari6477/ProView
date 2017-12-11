@@ -237,6 +237,10 @@ public class Title extends BaseObject
 		return findWebElementFromPropertyName("Title_Note_Colors_XPATH", color);
 	}
 	
+	public WebElement okBtn(){
+		return findWebElementFromPropertyName("LoanedTitle_OKBtn_XPATH");
+	}
+	
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_TrialSection_ToastInstructions_XPATH</b>.
@@ -306,6 +310,9 @@ public class Title extends BaseObject
 		clickWebElement(selectedTextContextMenu("Attach Displaced Annotation"));
 	}
 
+	public void clickOkBtn(){
+		clickWebElement(okBtn());
+	}
 	/**
 	 * Adds Note to the title for a particular text.
 	 * @throws InterruptedException
@@ -373,7 +380,9 @@ public class Title extends BaseObject
 	{
 		currentTab=driver.getWindowHandle();
 		clickWebElementByActionsClass(textOnPage(linkText));
+		threadWait(5);
 		for(String tab:driver.getWindowHandles()){
+			System.out.println(tab);
 			if(!tab.equalsIgnoreCase(currentTab)){
 				driver.switchTo().window(tab);
 			}
@@ -533,18 +542,35 @@ public class Title extends BaseObject
 		System.out.println("BGColor: "+bgColor+"\tFontColor: "+fontColor);
 		switch (colorScheme) {
 			case "White On Black":
-				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));	
+				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(255, 255, 255)"));
+				}else{
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
+				}
+					
 				break;
 				
 			case "Black On White":
-				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
+				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(255, 255, 255)"));
+				}else{
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
+				}
+				
 				break;
 	
 			default:
-				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(240, 237, 229, 1)"));
+				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(240, 237, 229)"));
+				}else{
+					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(240, 237, 229, 1)"));
+				}
 				break;
 		}
 		

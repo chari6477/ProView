@@ -12,13 +12,13 @@ public class PersonalizationDialogSteps extends DriverFactory
 {
 	WebDriver driver = getDriver();
 	PersonalizationDialog personalizationDialog = new PersonalizationDialog(driver);
-
+/*
 	@When("^I click the sign up button$")
 	public void i_click_the_sign_up_button() throws InterruptedException
 	{
 		personalizationDialog.signUp();
 	}
-
+*/
 	@When("^I personalize$")
 	public void i_personalize()
 	{

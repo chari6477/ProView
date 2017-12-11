@@ -1,6 +1,5 @@
-@Core
+@Coress
 Feature: Share current section
-
 	Background:
 		When I launch ProView
 		And I sign in

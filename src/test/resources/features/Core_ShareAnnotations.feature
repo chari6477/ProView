@@ -18,7 +18,7 @@ Feature: Share annotations
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
 		And I save the PDF
-		Then I verify that the PDF generated from "CurrentView" contains the text "REGRESSION"
+		Then I verify that the PDF generated from "CurrentView" contains the text "Regression"
 		When I open the options menu
 		And I sign out
 		Then I close the app
@@ -32,7 +32,7 @@ Feature: Share annotations
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
 		And I save the PDF
-		Then I verify that the PDF generated from "CurrentView" contains the text "REGRESSION"
+		Then I verify that the PDF generated from "CurrentView" contains the text "Regression"
 		When I open the options menu
 		And I sign out
 		Then I close the app

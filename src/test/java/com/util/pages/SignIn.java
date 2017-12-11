@@ -92,6 +92,13 @@ public class SignIn extends BaseObject
 		return findWebElementFromPropertyName("SignIn_ProductImage_XPATH");
 	}
 	
+	public void cookieTermsAcceptance(){
+		try {
+			clickWebElement(cookieContinueLink());
+		} catch (Exception e) {
+		}
+	}
+	
 	/**
 	 * Performs the sign in action of ProView app
 	 */
@@ -100,10 +107,7 @@ public class SignIn extends BaseObject
 		enterText(passwordTextFld(), readProperty("SignIn_Password_TestData"));
 		clickWebElement(signInBtn());
 		threadWait(20);
-		try {
-			clickWebElement(cookieContinueLink());
-		} catch (Exception e) {
-		}
+		cookieTermsAcceptance();
 	}
 	
 	/**
@@ -120,7 +124,7 @@ public class SignIn extends BaseObject
 	{
 		Thread.sleep(3000);
 		clickWebElement(useCheckoutCode());
-
+		driver.get("https://proview.qed.thomsonreuters.com/checkoutCode");
 		String checkoutCode = entitlement.createEntitlementForNewAnonymousUser(readProperty("Environment"),
 				readProperty("EntitlementAccountID"), readProperty("EntitlementResourceID"),
 				readProperty("EntitlementExpirationDate"));

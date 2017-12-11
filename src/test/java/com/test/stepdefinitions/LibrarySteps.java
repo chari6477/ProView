@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.util.helpers.DriverFactory;
 import com.util.pages.Library;
+import com.util.pages.Title;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,6 +13,7 @@ public class LibrarySteps extends DriverFactory
 {
 	WebDriver driver = getDriver();
 	Library library = new Library(driver);
+	Title title=new Title(driver);
 
 	@When("^I clear the title or author filter box$")
 	public void i_clear_the_title_or_author_filter_box()
@@ -59,6 +61,13 @@ public class LibrarySteps extends DriverFactory
 	public void i_open_the_title(String titleName)
 	{
 		library.openTitle(titleName);
+	}
+	
+	@When("^I open the loaned title \"(.*?)\"$")
+	public void i_open_the_loaned_title(String titleName)
+	{
+		library.openTitle(titleName);
+		title.clickOkBtn();
 	}
 	
 	@When("^I open the title \"(.*?)\" in current page$")

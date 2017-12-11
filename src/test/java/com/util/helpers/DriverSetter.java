@@ -1,14 +1,13 @@
 package com.util.helpers;
 
 
-import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -21,7 +20,7 @@ public class DriverSetter
 	
 	public DriverSetter()
 	{
-		
+		System.out.println(System.getProperty("user.home"));
 	}
 	
 	public WebDriver setDriver()
@@ -35,12 +34,15 @@ public class DriverSetter
 		{
 			case "chrome":
 				System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
-				HashMap<String, Object> plugin = new HashMap<String, Object>();
-				plugin.put("enabled", false);
-				plugin.put("name", "Chrome PDF Viewer");
+				//HashMap<String, Object> plugin = new HashMap<String, Object>();
+				//plugin.put("enabled", false);
+				//plugin.put("name", "Chrome PDF Viewer");
 
 				HashMap<String, Object> prefs = new HashMap<String, Object>();
-				prefs.put("plugins.plugins_list", Arrays.asList(plugin));	
+				//prefs.put("plugins.plugins_list", Arrays.asList(plugin));	
+				prefs.put("profile.default_content_settings.popups", 0);
+				prefs.put("download.prompt_for_download", "false");
+				prefs.put("download.default_directory", System.getProperty("user.home")+"\\Downloads");
 
 				ChromeOptions options =new ChromeOptions();
 				options.setExperimentalOption("prefs", prefs);
@@ -48,9 +50,19 @@ public class DriverSetter
 
 			case "firefox":
 				System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
-				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-				capabilities.setCapability("marionette", true);
-				return new FirefoxDriver(capabilities);
+				FirefoxProfile ffProfile = new FirefoxProfile();
+				ffProfile.setPreference("browser.download.useDownloadDir", true);
+				ffProfile.setPreference("browser.download.dir", System.getProperty("user.home")+"\\Downloads");
+				ffProfile.setPreference("browser.download.folderList", 2);
+				ffProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/zip, application/msword, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document"); 
+				//ffProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf"); 
+				ffProfile.setPreference( "browser.download.manager.showWhenStarting", false );
+				ffProfile.setPreference( "pdfjs.disabled", true );
+				
+				FirefoxOptions firefoxOptions= new FirefoxOptions();
+				firefoxOptions.setProfile(ffProfile);
+				firefoxOptions.setCapability(FirefoxDriver.MARIONETTE, true);
+				return new FirefoxDriver(firefoxOptions);
 				
 			case "IE":
 

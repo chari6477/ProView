@@ -149,7 +149,7 @@ public class TitleSteps extends DriverFactory
 		title.scrubberRight();
 	}
 
-	@Then("^I verify that the content contains \"(.*?)\"$")
+	@Then("^I verify that the content contains (.*?)$")
 	public void i_verify_that_the_content_contains(String myText) throws InterruptedException
 	{
 		Assert.assertTrue(title.verifyTextOnPage(myText));

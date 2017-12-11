@@ -42,6 +42,7 @@ public class EntitlementService
 		
 		String responseBody = EntityUtils.toString(createEntitlementResponse.getEntity());
 		client.close();
+		System.out.println(responseBody);
 		return new JSONObject(responseBody).getJSONObject("resource").getString("token");
 	}
 

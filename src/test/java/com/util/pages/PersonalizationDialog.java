@@ -2,6 +2,7 @@ package com.util.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.util.helpers.BaseObject;
 
@@ -16,16 +17,32 @@ public class PersonalizationDialog extends BaseObject
 	{
 		this.driver = driver;
 	}
+	
+	public WebElement firstNameTxtField(){
+		return findWebElementFromPropertyName("PersonalizationDialog_FirstName_TextField_ID");
+	}
 
+	public WebElement lastNameTxtField(){
+		return findWebElementFromPropertyName("PersonalizationDialog_LastName_TextField_ID");
+	}
+	
+	public WebElement emailTxtField(){
+		return findWebElementFromPropertyName("PersonalizationDialog_Email_TextField_ID");
+	}
+	
+	public WebElement personalizeBtn(){
+		return findWebElementFromPropertyName("PersonalizationDialog_Personalize_Btn_ID");
+	}
 	/**
 	 * Enters a fake first name, last name, and email address before clicking Personalize
 	 */
 	public void personalize()
 	{
-		type("personalizeFN", "id", "Core");
-		type("personalizeLN", "id", "Regression");
-		type("personalizeEM", "id", "CoreRegression@tr.com");
-		click("personalizeButton", "id");
+		enterText(firstNameTxtField(), "Core");
+		enterText(lastNameTxtField(), "Regression");
+		enterText(emailTxtField(),"CoreRegression@tr.com");
+		clickWebElementByActionsClass(personalizeBtn());
+		threadWait(5);
 	}
 
 	/**
@@ -33,12 +50,12 @@ public class PersonalizationDialog extends BaseObject
 	 * 
 	 * @throws InterruptedException
 	 */
-	public void signUp() throws InterruptedException
+/*	public void signUp() throws InterruptedException
 	{
 		Thread.sleep(1000);
 		waitForElementToBeClickable("signUpPersonalize", "css", 30);
 		click("signUpPersonalize", "css");
-	}
+	}*/
 
 	/**
 	 * Verifies that the personalization dialog is displayed
@@ -46,7 +63,8 @@ public class PersonalizationDialog extends BaseObject
 	 */
 	public void verifyDialog()
 	{
-		waitForElementToBeClickable("personalizeFN", "id", 30);
-		Assert.assertTrue(verifyElementIsDisplayed("personalizeFN", "id"));
+		Assert.assertTrue(verifyWebElementIsDisplayed("PersonalizationDialog_FirstName_TextField_ID"));
+		waitForElementToBeClickable(firstNameTxtField(), 30);
+		
 	}
 }
