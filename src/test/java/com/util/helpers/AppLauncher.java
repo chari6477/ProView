@@ -1,10 +1,6 @@
 package com.util.helpers;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.util.pages.SignIn;
 
@@ -103,7 +99,7 @@ public class AppLauncher extends DriverFactory
 			Thread.sleep(3000);*/
 
 		}
-		else
+		/*else
 		{
 			Thread.sleep(15000);
 			WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -115,6 +111,6 @@ public class AppLauncher extends DriverFactory
 			driver.switchTo().defaultContent();
 			WebElement mainframe = driver.findElement(By.xpath("//*[@id=\"mainframe\"]"));
 			driver.switchTo().frame(mainframe);
-		}
+		}*/
 	}
 }

@@ -8,9 +8,10 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		features= {"src/test/resources"},
 		glue = {"com.test.stepdefinitions"},
 		plugin = {"pretty", "json:results/json/output.json", "html:results/cucumber-html-report"},
-		tags = {"@Coress"} //to run multiple tags, change to "@Core, @Whatever"
+		tags = {"@Core"} //to run multiple tags, change to "@Core, @Whatever"
 		)
 
 public class FirefoxRunner
