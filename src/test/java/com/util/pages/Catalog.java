@@ -1,8 +1,10 @@
 package com.util.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import com.util.helpers.BaseObject;
 /**
@@ -129,8 +131,13 @@ public class Catalog extends BaseObject
 	 */
 	public void selectCatalog(String catalogName) throws InterruptedException
 	{
-		clickWebElement(dropdownMenu());
-		clickWebElement(dropdownMenuOptions(catalogName));
+		/*clickWebElement(dropdownMenu());
+		clickWebElement(dropdownMenuOptions(catalogName));   comment by Chari */
+		
+		Select select = new Select(driver.findElement(By.id("catalogSelector")));
+		select.selectByVisibleText(catalogName);
+		Thread.sleep(3000);
+				
 	}
 	
 	/**

@@ -195,6 +195,7 @@ public class OptionsMenu extends BaseObject
 	public void signOut() throws InterruptedException
 	{
 		clickWebElement(options("Sign Out"));
+		threadWait(2);
 	}
 
 	/**

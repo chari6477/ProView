@@ -1,19 +1,10 @@
 package com.test.stepdefinitions;
 
-import java.io.IOException;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
-import com.cucumber.listener.Reporter;
 import com.util.helpers.DriverFactory;
 import com.util.pages.AZIndex;
-
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
 import cucumber.api.java.en.When;
-import gherkin.deps.net.iharder.Base64;
+
 
 public class AZIndexSteps extends DriverFactory
 {

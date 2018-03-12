@@ -1,6 +1,7 @@
 package com.util.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -97,8 +98,8 @@ public class DetailsPanel extends BaseObject
 		try {
 			clickWebElement(alreadyAvailableCategories(text));
 		} catch (Exception e) {
-			System.out.println("This category name is not available in the list of categories.");
-			clickWebElement(addACategoryBtn());
+			System.out.println("\""+text + "\" This category name is not available in the list of categories.");
+			clickWebElement(driver.findElement(By.id("library-add-tag-button")));
 		}
 		
 	}

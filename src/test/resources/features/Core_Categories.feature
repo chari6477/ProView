@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_sanity
 Feature: Categories
   #the verify should be changed back to "This Is A Category With A Name That Is 50 Chars!!!" when we see if the bug is a bug/it gets fixed
 	Scenario: Core_Categories

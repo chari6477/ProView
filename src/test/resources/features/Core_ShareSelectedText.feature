@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Share selected text
 
 	Background:
@@ -14,12 +14,12 @@ Feature: Share selected text
 		And I close the options menu
 		When I jump to page "1"
 		Then I verify that the content contains "Text References"
-		When I select the text "Text References"
+		When I select the texts "Text References"
 		And I click the "Share" option
 		Then I verify that the "SelectedText" option is selected
 		When I click the Next button
 		And I save the PDF
-		Then I verify that the PDF generated from "SelectedText" contains the text "Text References"
+		Then I verify that the PDF generated from "SelectedText" contains the text "Text"
 		When I open the options menu
 		And I sign out
 		Then I close the app
@@ -29,12 +29,12 @@ Feature: Share selected text
 		And I close the options menu
 		When I jump to page "1"
 		Then I verify that the content contains "Text References"
-		When I select the text "Text References"
+		When I select the texts "Text References"
 		And I click the "Share" option
 		Then I verify that the "SelectedText" option is selected
 		When I click the Next button
 		And I save the PDF
-		Then I verify that the PDF generated from "SelectedText" contains the text "Text References"
+		Then I verify that the PDF generated from "SelectedText" contains the text "Text"
 		When I open the options menu
 		And I sign out
 		Then I close the app

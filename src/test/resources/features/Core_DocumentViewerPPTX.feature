@@ -13,7 +13,7 @@ Feature: Document viewer PPTX
 		And I select the "Pages" layout option
 		And I close the options menu
 		When I click the "PPTX Test" link
-		And I save the file
+		And I save the PPTX file
 		Then I verify that the PPTX "File" contains the text "PPTX Test" 
 		When I open the options menu
 		And I sign out
@@ -23,7 +23,7 @@ Feature: Document viewer PPTX
 		And I select the "Scroll" layout option 
 		And I close the options menu
 		When I click the "PPTX Test" link
-		And I save the file
+		And I save the PPTX file
 		Then I verify that the PPTX "File" contains the text "PPTX Test"
 		When I open the options menu
 		And I sign out

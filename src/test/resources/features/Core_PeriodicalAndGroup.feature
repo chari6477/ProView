@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Periodical group
 
 	Scenario: Core_PeriodicalAndGroup

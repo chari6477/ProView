@@ -1,4 +1,4 @@
-@broken
+@Core
 Feature: LMS personalization
 
   Scenario: Core_LMSPersonalization

@@ -1,5 +1,7 @@
 package com.test.stepdefinitions;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.util.helpers.DriverFactory;
@@ -34,6 +36,14 @@ public class TitleSearchSteps extends DriverFactory
 	@When("^I click the Reset button$")
 	public void i_click_the_Reset_button()
 	{
+		try
+		{
+			 JavascriptExecutor Executor = (JavascriptExecutor)driver;
+			 Executor.executeScript("arguments[0].setAttribute('style', 'display: none');" , driver.findElement(By.id("navPrevious")));
+             Thread.sleep(1000);
+		}catch(Exception e)
+		{
+		}
 		titleSearch.clearSearchResults();
 		titleSearch.openTitleSearch();
 	}

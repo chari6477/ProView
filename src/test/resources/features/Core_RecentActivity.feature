@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Recent activity
 
 	Background:

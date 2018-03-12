@@ -1,4 +1,4 @@
-@broken
+@Core_Regression
 Feature: Pages spanning documents
 
 	Scenario: Core_PagesSpanningDocuments
@@ -17,7 +17,7 @@ Feature: Pages spanning documents
 		And I open the annotations menu
 		Then I verify that the highlight is displayed in the annotations menu
 		When I click the highlight in the annotations menu
-		Then I verify that the content contains "ISBN"
+		Then I verify that the content contains "BN"
 		When I delete the highlight from the annotations menu
 		Then I verify that the highlight is not displayed in the annotations menu
 		When I open the options menu

@@ -1,5 +1,6 @@
 package com.test.stepdefinitions;
 
+import java.awt.Robot;
 import org.openqa.selenium.WebDriver;
 
 import com.util.helpers.DriverFactory;
@@ -14,6 +15,7 @@ public class QuickLinksSteps extends DriverFactory
 	WebDriver driver = getDriver();
 	QuickLinks quickLinks = new QuickLinks(driver);
 	Title title = new Title(driver);
+	Robot robot;
 
 	@When("^I click the \"(.*?)\" link$")
 	public void i_click_the_link(String link) throws InterruptedException
@@ -38,7 +40,7 @@ public class QuickLinksSteps extends DriverFactory
 	{
 		quickLinks.selectSet(listSet);
 	}
-	
+
 	@When("^I click the \"(.*?)\" quick link$")
 	public void i_click_the_quick_link(String quickLink) throws InterruptedException
 	{

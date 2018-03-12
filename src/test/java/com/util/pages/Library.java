@@ -54,7 +54,7 @@ public class Library extends BaseObject
 	public WebElement title(String title){
 		WebElement book=null;
 		try{
-			book=findWebElementFromPropertyName("Book_"+title+"_XPATH",5);
+			book=findWebElementFromPropertyName("Book_"+title+"_XPATH",10);
 		}catch(Exception e){
 			searchForTitle(title);
 			threadWait(2);

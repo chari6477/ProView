@@ -19,11 +19,27 @@ public class FileSaverSteps extends DriverFactory
 	public void i_save_the_file() throws IOException, InterruptedException, AWTException
 	{
 		fileSaver.saveFile();
+		Thread.sleep(10000);
 	}
-
-	@When("^I save the PDF$")
-	public void i_save_the_PDF() throws IOException, InterruptedException, AWTException
+	
+	@When("^I save the PDF file$")
+	public void i_save_the_PDF_file() throws IOException, InterruptedException, AWTException
 	{
-		fileSaver.saveFile();
+		fileSaver.savePDFfile();
+		Thread.sleep(10000);
+	}
+	
+	@When("^I save the PPTX file$")
+	public void i_save_the_PPTX_file() throws IOException, InterruptedException, AWTException
+	{
+		fileSaver.savePPTXfile();
+		Thread.sleep(10000);
+	}
+	
+	@When("^I save the XLSX file$")
+	public void i_save_the_XLSX_file() throws IOException, InterruptedException, AWTException
+	{
+		fileSaver.saveXLSXfile();
+		Thread.sleep(10000);
 	}
 }

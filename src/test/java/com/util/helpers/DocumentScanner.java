@@ -66,20 +66,38 @@ public class DocumentScanner extends BaseObject
 	{
 		// needed? (for download time) Don't know what to wait for
 		threadWait(10);
-		File docx = new File(properties.readProperty(filePath));
-		FileInputStream fiss = new FileInputStream(docx);
+		File myFile;
+		if(properties.readProperty("platform").contains("firefox"))
+		{
+			String filePath1="C://Users//pc00541557//Downloads//file";
+			myFile = new File(filePath1);
+		}else
+		{
+			myFile = new File(properties.readProperty(filePath));
+		}
+
+		FileInputStream fiss = new FileInputStream(myFile);
 		XWPFDocument doc = new XWPFDocument(fiss);
 		XWPFWordExtractor xw = new XWPFWordExtractor(doc);
 		String docxText = xw.getText();
 		Assert.assertTrue(docxText.contains(text));
 		xw.close();
-		docx.delete();
+		myFile.delete();
 	}
 
 	public void scanPDF(String filepath, String text) throws IOException, InterruptedException
 	{
-		threadWait(10);
-		File myFile = new File(readProperty(filepath));
+		//threadWait(10);
+		File myFile;
+		if(properties.readProperty("platform").contains("firefox"))
+		{
+			String filePath1="C://Users//pc00541557//Downloads//PDFTest.pdf";
+			myFile = new File(filePath1);
+		}else
+		{
+			myFile = new File(readProperty(filepath));
+		}
+
 		PDDocument test = PDDocument.load(myFile);
 
 		PDFTextStripper textExtract = new PDFTextStripper();
@@ -93,29 +111,46 @@ public class DocumentScanner extends BaseObject
 	{
 		// needed? (for download time) Don't know what to wait for
 		threadWait(10);
-		File ppt = new File(properties.readProperty(filePath));
-		FileInputStream inputStream = new FileInputStream(ppt);
+		File myFile;
+		if(properties.readProperty("platform").contains("firefox"))
+		{
+			String filePath1="C://Users//pc00541557//Downloads//file";
+			myFile = new File(filePath1);
+		}else
+		{
+			myFile = new File(properties.readProperty(filePath));
+		}
+		
+		FileInputStream inputStream = new FileInputStream(myFile);
 		XMLSlideShow pptshow = new XMLSlideShow(inputStream);
 		XSLFPowerPointExtractor extract = new XSLFPowerPointExtractor(pptshow);
 		String pptText = extract.getText();
 		Assert.assertTrue(pptText.contains(Text));
 		pptshow.close();
 		extract.close();
-		ppt.delete();
+		myFile.delete();
 	}
 
 	public void scanXLSX(String text, String filePath) throws IOException, InterruptedException
 	{
 		// needed? (for download time) Don't know what to wait for
 		threadWait(10);
-		File xlsx = new File(properties.readProperty(filePath));
-		FileInputStream fis = new FileInputStream(xlsx);
+		File myFile;
+		if(properties.readProperty("platform").contains("firefox"))
+		{
+			String filePath1="C://Users//pc00541557//Downloads//file";
+			myFile = new File(filePath1);
+		}else
+		{
+			myFile = new File(properties.readProperty(filePath));
+		}
+		FileInputStream fis = new FileInputStream(myFile);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFExcelExtractor xe = new XSSFExcelExtractor(wb);
 		String xlsxText = xe.getText();
 		Assert.assertTrue(xlsxText.contains(text));
 		wb.close();
 		xe.close();
-		xlsx.delete();
+		myFile.delete();
 	}
 }

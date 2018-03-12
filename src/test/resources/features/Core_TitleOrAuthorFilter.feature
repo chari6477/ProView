@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Title or author filter
 
 	Scenario: Core_eReference

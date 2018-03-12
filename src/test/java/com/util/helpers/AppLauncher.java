@@ -6,7 +6,8 @@ import com.util.pages.SignIn;
 
 public class AppLauncher extends DriverFactory
 {
-	WebDriver driver = getDriver();
+	WebDriver driver = getDriver();    
+	
 	PropertyReader properties = new PropertyReader();
 	SignIn signIn = new SignIn(driver);
 	
@@ -88,6 +89,10 @@ public class AppLauncher extends DriverFactory
 					
 				case "DEMO":
 					driver.get(properties.readProperty("DEMO"));
+					break;
+					
+				case "PROD":
+					driver.get("https://proview.thomsonreuters.com");
 					break;
 			
 			}

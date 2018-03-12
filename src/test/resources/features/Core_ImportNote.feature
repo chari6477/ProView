@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_sanity11
 Feature: Import note
 
 	Background:
@@ -21,13 +21,13 @@ Feature: Import note
 		When I open the annotations menu
 		And I open the displaced annotations menu
 		And I click the displaced annotation
-		And I create a displaced note by selecting the text "Editor and Author of Notes"
+		And I create a displaced note by selecting the text "Income Tax Application Rules"
 		And I jump to page "21"
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
-		When I click the note in the annotations menu
-		Then I verify that the content contains "Notes"
-		When I delete the note from the annotations menu
+		When I click the note in the annotation menu
+		Then I verify that the content contains "Income Tax"
+		When I delete the note from the annotation menu
 		Then I verify that the note is not displayed in the annotations menu
 		When I open the options menu
 		And I sign out
@@ -39,13 +39,13 @@ Feature: Import note
 		When I open the annotations menu
 		And I open the displaced annotations menu
 		And I click the displaced annotation
-		And I create a displaced note by selecting the text "Editor and Author of Notes"
+		And I create a displaced note by selecting the text "Income Tax Application Rules"
 		And I jump to page "21"
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
-		When I click the note in the annotations menu
-		Then I verify that the content contains "Notes"
-		When I delete the note from the annotations menu
+		When I click the note in the annotation menu
+		Then I verify that the content contains "Income Tax"
+		When I delete the note from the annotation menu
 		Then I verify that the note is not displayed in the annotations menu
 		When I open the options menu
 		And I sign out

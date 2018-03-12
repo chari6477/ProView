@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Footnotes
 
 	Background:
@@ -14,9 +14,8 @@ Feature: Footnotes
 		And I close the options menu
 		And I jump to page "18"
 		Then I verify that the content contains "promote judicial economy"
-		#When I scroll to the bottom of the page
+		When I scroll to the bottom of the page
 		And I click on the footnote "10"
-		#Then I verify that the content scrolls to "topFootnote10Location"
 		When I open the options menu
 		And I sign out
 		Then I close the app

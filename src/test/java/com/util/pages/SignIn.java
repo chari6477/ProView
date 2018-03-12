@@ -27,7 +27,7 @@ public class SignIn extends BaseObject
 		this.driver = driver;
 
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Cookie_ContinueLink_ID</b>.
@@ -35,7 +35,7 @@ public class SignIn extends BaseObject
 	public WebElement cookieContinueLink(){
 		return findWebElementFromPropertyName("Cookie_ContinueLink_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_UsernameTextFld_ID</b>.
@@ -43,7 +43,7 @@ public class SignIn extends BaseObject
 	public WebElement usernameTextFld(){
 		return findWebElementFromPropertyName("SignIn_UsernameTextFld_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_PasswordTextFld_ID</b>.
@@ -51,7 +51,7 @@ public class SignIn extends BaseObject
 	public WebElement passwordTextFld(){
 		return findWebElementFromPropertyName("SignIn_PasswordTextFld_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_SignInButton_ID</b>.
@@ -59,7 +59,7 @@ public class SignIn extends BaseObject
 	public WebElement signInBtn(){
 		return findWebElementFromPropertyName("SignIn_SignInButton_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_CheckOutCode_SignInBtn_XPATH</b>.
@@ -67,15 +67,15 @@ public class SignIn extends BaseObject
 	public WebElement checkOutPageSignInBtn(){
 		return findWebElementFromPropertyName("SignIn_CheckOutCode_SignInBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_UseCheckoutCode_XPATH</b>.
 	 */
 	public WebElement useCheckoutCode(){
-		return findWebElementFromPropertyName("SignIn_UseCheckoutCode_XPATH");
+		return findWebElementFromPropertyName("SignIn_UseCheckoutCode_XPATH"); 
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_CheckoutCodeTextFld_ID</b>.
@@ -83,7 +83,7 @@ public class SignIn extends BaseObject
 	public WebElement checkoutCodeTextFld(){
 		return findWebElementFromPropertyName("SignIn_CheckoutCodeTextFld_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>SignIn_ProductImage_XPATH</b>.
@@ -91,25 +91,38 @@ public class SignIn extends BaseObject
 	public WebElement productImg(){
 		return findWebElementFromPropertyName("SignIn_ProductImage_XPATH");
 	}
-	
+
 	public void cookieTermsAcceptance(){
 		try {
 			clickWebElement(cookieContinueLink());
 		} catch (Exception e) {
 		}
 	}
-	
+
 	/**
 	 * Performs the sign in action of ProView app
 	 */
 	public void signInAction(){
-		enterText(usernameTextFld(), readProperty("SignIn_Username_TestData"));
-		enterText(passwordTextFld(), readProperty("SignIn_Password_TestData"));
-		clickWebElement(signInBtn());
-		threadWait(20);
-		cookieTermsAcceptance();
+		try {
+			enterText(usernameTextFld(), readProperty("SignIn_Username_TestData"));
+			enterText(passwordTextFld(), readProperty("SignIn_Password_TestData"));
+			clickWebElement(signInBtn());
+			threadWait(10);
+			if(!readProperty("platform").equals("IE"))
+			{
+				cookieTermsAcceptance();
+			}
+		}catch(Exception e)
+		{
+			try {
+				cookieTermsAcceptance();
+			}catch(Exception e1)
+			{
+			}
+			System.out.println("Already Signed In...");
+		}
 	}
-	
+
 	/**
 	 * Clicks on the "Use Checkout Code" link, generates a checkout code, and
 	 * signs in using that checkout code.

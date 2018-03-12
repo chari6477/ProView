@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_FF1
 Feature: Document viewer XLSX
 
 	Background:
@@ -13,7 +13,7 @@ Feature: Document viewer XLSX
 		And I select the "Pages" layout option
 		And I close the options menu
 		When I click the "XLSX Test" link
-		And I save the file
+		And I save the XLSX file
 		Then I verify that the XLSX "File" contains the text "1	XLSX	Test" 
 		When I open the options menu
 		And I sign out
@@ -23,7 +23,7 @@ Feature: Document viewer XLSX
 		And I select the "Scroll" layout option 
 		And I close the options menu
 		When I click the "XLSX Test" link
-		And I save the file
+		And I save the XLSX file
 		Then I verify that the XLSX "File" contains the text "1	XLSX	Test"
 		When I open the options menu
 		And I sign out

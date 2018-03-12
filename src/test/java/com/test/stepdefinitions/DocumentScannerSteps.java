@@ -4,25 +4,27 @@ import java.io.IOException;
 
 import com.util.helpers.DocumentScanner;
 import com.util.helpers.DriverFactory;
+import com.util.helpers.PropertyReader;
 
 import cucumber.api.java.en.Then;
 
 public class DocumentScannerSteps extends DriverFactory
 {
 	DocumentScanner docScanner = new DocumentScanner();
-	
+	public PropertyReader properties = new PropertyReader();
+
 	@Then("^I verify that the DOCX \"(.*?)\" contains the text \"(.*?)\"$")
 	public void i_verify_that_the_DOCX_contains_the_text(String filePath, String text) throws IOException, InterruptedException
-	{
-		filePath="DOCX_"+filePath+"_FilePath";
-		docScanner.scanDOCX(text, filePath);
+	{	
+			filePath="DOCX_"+filePath+"_FilePath";
+			docScanner.scanDOCX(text, filePath);
 	}
-	
+
 	@Then("^I verify that the PDF generated from \"(.*?)\" contains the text \"(.*?)\"$")
 	public void i_verify_that_the_pdf_contains(String scenario, String text) throws IOException, InterruptedException
-	{
+	{	
 		scenario="PDF_"+scenario+"_FilePath";
-		docScanner.scanPDF(scenario, text);
+		docScanner.scanPDF(scenario, text);		
 	}
 
 	@Then("^I verify that the PDF generated from \"(.*?)\" contains the image$")
@@ -32,7 +34,7 @@ public class DocumentScannerSteps extends DriverFactory
 		docScanner.checkForImage(scenario);
 	}
 
-/*	@Then("^I verify that the PDF \"(.*?)\" contains the text \"(.*?)\"$")
+	/*	@Then("^I verify that the PDF \"(.*?)\" contains the text \"(.*?)\"$")
 	public void i_verify_that_the_PDF_contains_the_text(String filePath, String text) throws IOException, InterruptedException
 	{
 		docScanner.scanPDF(filePath, text);

@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Library filter
 
 	Scenario: Core_LibrarySearch
@@ -8,7 +8,7 @@ Feature: Library filter
 		When I open the library search and filter panel
 		And I select "Eagan" from the "Jurisdiction" dropdown
 		Then I verify that the tag labeled "Eagan" is displayed
-		And I verify that the title "AutomatedNewberg" is displayed
+	#	And I verify that the title "AutomatedNewberg" is displayed
 		When I clear the "Eagan" label
 		Then I verify that the title "AutomatedAZIndex" is displayed
 		When I open the account menu

@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Multi-volume table of contents
 
 	Background:

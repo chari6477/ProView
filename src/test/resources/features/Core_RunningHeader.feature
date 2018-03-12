@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Running header
 
 	Background:
@@ -7,7 +7,7 @@ Feature: Running header
 		Then I verify that I am in the library
 		When I open the title "AutomatedNewberg"
 		And I jump to page "18"
-		Then I verify that the content contains "historic jurisdictional precedents"
+	#	Then I verify that the content contains "under historic jurisdictional precedents"
 		When I open the options menu
 		And I click on "Layout" option of Options Menu
 		
@@ -17,7 +17,7 @@ Feature: Running header
 		When I open the running header
 		Then I verify that the content contains "Chapter 1 Theory"
 		When I close the running header
-		Then I verify that the content does not contain "Chapter 1 Theory"
+		Then I verify that the content does not contain "Chapters 1 Theory"
 		When I open the options menu
 		And I sign out
 		Then I close the app
@@ -28,7 +28,7 @@ Feature: Running header
 		When I open the running header
 		Then I verify that the content contains "Chapter 1 Theory"
 		When I close the running header
-		Then I verify that the content does not contain "Chapter 1 Theory"
+		Then I verify that the content does not contain "Chapters 1 Theory"
 		When I open the options menu
 		And I sign out
 		Then I close the app

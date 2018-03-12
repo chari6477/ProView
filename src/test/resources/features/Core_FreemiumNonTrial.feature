@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Freemium with non-trial version of a title
 
 	Scenario: Core_FreemiumNonTrial

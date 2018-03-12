@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_sanity
 Feature: Group
 
 	Scenario: Core_Group

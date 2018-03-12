@@ -1,6 +1,7 @@
 package com.util.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -8,7 +9,7 @@ import com.util.helpers.BaseObject;
 import com.util.helpers.PropertyReader;
 /**
  * This class contains all <b>Page Objects</b> related to <b>Annotations Menu</b> of <b>ProView Browser Application</b> 
- * @author U6064272 - <b>Basha Shaik</b>
+ * @author PCOO541557 - <b>Chari</b>
  *
  */
 public class AnnotationsMenu extends BaseObject
@@ -23,7 +24,7 @@ public class AnnotationsMenu extends BaseObject
 	{
 		this.driver = driver;
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>AnnotationsMenu_Btn_ID</b>.
@@ -31,7 +32,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement annotationsMenu(){
 		return findWebElementFromPropertyName("AnnotationsMenu_Btn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>AnnotationsMenu_DeleteAnnotationBtn_XPATH</b>.
@@ -39,7 +40,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement deleteAnnotationBtn(){
 		return findWebElementFromPropertyName("AnnotationsMenu_DeleteAnnotationBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>AnnotationsMenu_AnnotationEntry_CSS</b>.
@@ -47,7 +48,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement annotationEntry(){
 		return findWebElementFromPropertyName("AnnotationsMenu_AnnotationEntry_CSS");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param color Should be one among the following - <b>all</b>, <b>green</b>, <b>yellow</b>, <b>blue</b>, <b>purple</b>, <b>pink</b>, <b>orange</b>, <b>black</b>. 
@@ -56,7 +57,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement colorFilterOptions(String color){
 		return findWebElementFromPropertyName("AnnotationsMenu_ColorFilterOptions_XPATH", color);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param category Should be one among the following - <b>All</b>, <b>Bookmarks</b>, <b>Highlights</b> and <b>Notes</b>.
@@ -65,7 +66,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement buttonBarOptions(String category){
 		return findWebElementFromPropertyName("AnnotationsMenu_ButtonBarOptions_ID", category);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>AnnotationsMenu_ColorFilterBtn_ID</b>.
@@ -73,7 +74,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement colorFilterBtn(){
 		return findWebElementFromPropertyName("AnnotationsMenu_ColorFilterBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>AnnotationsMenu_ColorFilterBtn_ID</b>.
@@ -81,7 +82,7 @@ public class AnnotationsMenu extends BaseObject
 	public WebElement showDisplacedAnnotationsBtn(){
 		return findWebElementFromPropertyName("AnnotationsMenu_ShowDisplacedAnnotationsBtn_ID");
 	}
-	
+
 	/**
 	 * This method deletes an annotation by clicking on <b>Delete</b> button which will be displayed when we hover on particular annotation.
 	 * @throws InterruptedException
@@ -91,6 +92,13 @@ public class AnnotationsMenu extends BaseObject
 		moveToWebElement(annotationEntry());
 		//moveToWebElement(deleteAnnotationBtn());
 		clickWebElement(deleteAnnotationBtn());
+	}
+
+	public void deleteAnnotations() throws InterruptedException
+	{
+		moveToWebElement(driver.findElement(By.xpath("//div[@id='annotations'][2]")));
+		Thread.sleep(3000);
+	//	driver.findElement(By.xpath("//img[contains(@src,'delete_button')]")).click();
 	}
 
 	/**
@@ -112,7 +120,7 @@ public class AnnotationsMenu extends BaseObject
 	{
 		clickWebElement(buttonBarOptions(category));
 	}
-	
+
 	/**
 	 * Navigates to the annotation via the annotations menu.
 	 * 
@@ -122,7 +130,7 @@ public class AnnotationsMenu extends BaseObject
 	{
 		clickWebElement(annotationEntry());
 	}
-	
+
 	/**
 	 * Opens <b>Annotations Menu</b> by clicking on it.
 	 * @throws InterruptedException

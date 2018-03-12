@@ -1,9 +1,12 @@
 package com.util.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.util.helpers.BaseObject;
 
@@ -22,11 +25,28 @@ public class Title extends BaseObject
 	{
 		this.driver = driver;
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Content_XPATH</b>.
 	 */
+
+	// added by chari
+	public void doubleClickElement(WebDriver driver1,String text)
+	{
+		try {Thread.sleep(2000);} catch (InterruptedException e) {e.printStackTrace();}
+		System.out.println("Double click is going to be done.");
+		Actions action = new Actions(driver1);
+		//action.doubleClick(driver1.findElement(By.tagName("th"))).build().perform();
+
+		action.moveToElement(driver1.findElement(By.xpath("//p[contains(text(),'"+text+"')]"))).perform();
+		action.doubleClick(driver1.findElement(By.xpath("//p[contains(text(),'\"+text+\"')]"))).build().perform();
+		try {Thread.sleep(3000);} catch (InterruptedException e) {e.printStackTrace();}
+		System.out.println("Double click is done.");
+	}
+
+
+
 	public WebElement titleContent(){
 		return findWebElementFromPropertyName("Title_Content_XPATH");
 	}
@@ -38,7 +58,7 @@ public class Title extends BaseObject
 	public WebElement addBookmarkBtn(){
 		return findWebElementFromPropertyName("Title_Bookmark_AddBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param color Should be any one of the following colors - <b>green, blue, yellow, purple, pink and black</b>.
@@ -47,7 +67,7 @@ public class Title extends BaseObject
 	public WebElement bookmarkColorOptions(String color){
 		return findWebElementFromPropertyName("Title_Bookmark_Colors_XPATH", color);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param color Should be any one of the following colors - <b>green, blue, yellow, purple, pink and black</b>.
@@ -56,7 +76,7 @@ public class Title extends BaseObject
 	public WebElement existingBookmarksOfColor(String color){
 		return findWebElementFromPropertyName("Title_Bookmark_ExistingOneWithColor_XPATH", color);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_BookMark_DescriptionTextFld_XPATH</b>.
@@ -64,7 +84,7 @@ public class Title extends BaseObject
 	public WebElement bookmarkDescriptionTextFld(){
 		return findWebElementFromPropertyName("Title_BookMark_DescriptionTextFld_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Bookmark_ClearDescriptonBtn_ID</b>.
@@ -72,7 +92,7 @@ public class Title extends BaseObject
 	public WebElement clearBookmarkDescriptionBtn(){
 		return findWebElementFromPropertyName("Title_Bookmark_ClearDescriptonBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Bookmark_SaveBtn_XPATH</b>.
@@ -80,7 +100,7 @@ public class Title extends BaseObject
 	public WebElement bookmarkSaveBtn(){
 		return findWebElementFromPropertyName("Title_Bookmark_SaveBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Bookmark_CloseBtn_XPATH</b>.
@@ -88,7 +108,7 @@ public class Title extends BaseObject
 	public WebElement bookmarkCloseBtn(){
 		return findWebElementFromPropertyName("Title_Bookmark_CloseBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param option Should be any one of the following- <b>Highlight, Add Note, Attach Displaced Annotation and Share</b>
@@ -97,7 +117,7 @@ public class Title extends BaseObject
 	public WebElement selectedTextContextMenu(String option){
 		return findWebElementFromPropertyName("Title_SelectedTextContextMenu_Options_XPATH", option);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param color Should be any one of the following colors - <b>green, blue, yellow, purple, pink and black</b>.
@@ -106,7 +126,7 @@ public class Title extends BaseObject
 	public WebElement highlightWithColor(String color){
 		return findWebElementFromPropertyName("Title_Highlight_Colors_XPATH", color);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param highlightText Should be a valid text on the page.
@@ -115,7 +135,7 @@ public class Title extends BaseObject
 	public WebElement existingHighlights(String highlightText){
 		return findWebElementFromPropertyName("Title_Highlight_ExistingOne_XPATH", highlightText);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Note_CreateNoteFromHighlightBtn_XPATH</b>.
@@ -123,7 +143,7 @@ public class Title extends BaseObject
 	public WebElement createNoteFromHighlightBtn(){
 		return findWebElementFromPropertyName("Title_Note_CreateNoteFromHighlightBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Note_TextFld_ID</b>.
@@ -131,7 +151,7 @@ public class Title extends BaseObject
 	public WebElement noteTextFld(){
 		return findWebElementFromPropertyName("Title_Note_TextFld_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Scrubber_JumpToPageTextFld_ID</b>.
@@ -139,7 +159,7 @@ public class Title extends BaseObject
 	public WebElement jumpToPageTextFld(){
 		return findWebElementFromPropertyName("Title_Scrubber_JumpToPageTextFld_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Annotation_Displaced_XPATH</b>.
@@ -147,7 +167,7 @@ public class Title extends BaseObject
 	public WebElement displacedAnnotation(){
 		return findWebElementFromPropertyName("Title_Annotation_Displaced_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Scrubber_NextPageBtn_XPATH</b>.
@@ -155,7 +175,7 @@ public class Title extends BaseObject
 	public WebElement nextPageBtn(){
 		return findWebElementFromPropertyName("Title_Scrubber_NextPageBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_RunningHeader_ID</b>.
@@ -163,7 +183,7 @@ public class Title extends BaseObject
 	public WebElement runningHeader(){
 		return findWebElementFromPropertyName("Title_RunningHeader_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Scrubber_PreviousPageBtn_XPATH</b>.
@@ -179,7 +199,7 @@ public class Title extends BaseObject
 	public WebElement backToLibrary(){
 		return findWebElementFromPropertyName("Title_BackToLibraryBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Note_SaveNoteBtn_XPATH</b>.
@@ -187,7 +207,7 @@ public class Title extends BaseObject
 	public WebElement saveNoteBtn(){
 		return findWebElementFromPropertyName("Title_Note_SaveNoteBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Note_DeleteNoteBtn_XPATH</b>.
@@ -195,7 +215,7 @@ public class Title extends BaseObject
 	public WebElement deleteNoteBtn(){
 		return findWebElementFromPropertyName("Title_Note_DeleteNoteBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Scrubber_SliderRange_XPATH</b>.
@@ -203,7 +223,7 @@ public class Title extends BaseObject
 	public WebElement scrubberRange(){
 		return findWebElementFromPropertyName("Title_Scrubber_SliderRange_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_Scrubber_SliderBtn_XPATH</b>.
@@ -211,7 +231,7 @@ public class Title extends BaseObject
 	public WebElement scrubberBtn(){
 		return findWebElementFromPropertyName("Title_Scrubber_SliderBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_ExtraNav_NextPageBtn_ID</b>.
@@ -219,7 +239,7 @@ public class Title extends BaseObject
 	public WebElement extraNavNextPageBtn(){
 		return findWebElementFromPropertyName("Title_ExtraNav_NextPageBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_ExtraNav_PreviousPageBtn_ID</b>.
@@ -227,7 +247,7 @@ public class Title extends BaseObject
 	public WebElement extraNavPreviousPageBtn(){
 		return findWebElementFromPropertyName("Title_ExtraNav_PreviousPageBtn_ID");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param color Should be any one of the following colors - <b>green, blue, yellow, purple, pink and black</b>.
@@ -236,11 +256,11 @@ public class Title extends BaseObject
 	public WebElement noteWithColors(String color){
 		return findWebElementFromPropertyName("Title_Note_Colors_XPATH", color);
 	}
-	
+
 	public WebElement okBtn(){
 		return findWebElementFromPropertyName("LoanedTitle_OKBtn_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_TrialSection_ToastInstructions_XPATH</b>.
@@ -248,7 +268,7 @@ public class Title extends BaseObject
 	public WebElement trialSectionToastInstructions(){
 		return findWebElementFromPropertyName("Title_TrialSection_ToastInstructions_XPATH");
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param text Should be a valid text of any compass markers.
@@ -257,7 +277,7 @@ public class Title extends BaseObject
 	public WebElement compassMarkersWithTitle(String text){
 		return findWebElementFromPropertyName("Title_Compass_Markers_XPATH", text);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param number Should be a valid foot note number.
@@ -266,7 +286,7 @@ public class Title extends BaseObject
 	public WebElement footNotesByNumber(String number){
 		return findWebElementFromPropertyName("Title_FootNotes_XPATH", number);
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @param content Should be a valid text of foot note inside a pop over.
@@ -275,7 +295,7 @@ public class Title extends BaseObject
 	public WebElement footNotePopOverContent(String content){
 		return findWebElementFromPropertyName("Title_FootNotes_PopOverContent_XPATH", content);
 	}
-	
+
 	/**
 	 * Adds bookmark to the content.
 	 * @param color Should be any one of the following colors - <b>green, blue, yellow, purple, pink and black</b>.
@@ -293,7 +313,7 @@ public class Title extends BaseObject
 		threadWait(2);
 		clickWebElement(bookmarkCloseBtn());
 	}
-	
+
 	/**
 	 * This method creates WebElement object based on property given.
 	 * @return WebElement for the property named <b>Title_InterBookLinking_ContinueBtn_XPATH</b>.
@@ -301,7 +321,7 @@ public class Title extends BaseObject
 	public WebElement interBookLinkingContinueBtn(){
 		return findWebElementFromPropertyName("Title_InterBookLinking_ContinueBtn_XPATH");
 	}
-	
+
 	/**
 	 * Attaches the Displaced annotations to the title.
 	 */
@@ -329,7 +349,7 @@ public class Title extends BaseObject
 	{
 		clickWebElement(selectedTextContextMenu("Highlight"));
 	}
-	
+
 	/**
 	 * Adds note from the highlight.
 	 * @param highlightText Should be valid text from the title.
@@ -412,17 +432,19 @@ public class Title extends BaseObject
 	 * @param textToBeHighlighted Should be a valid text in the title.
 	 * @throws InterruptedException
 	 */
+	int i = 1;
 	public void highlightText(String textToBeHighlighted) throws InterruptedException
 	{
 		for(String handle:driver.getWindowHandles()){
-			System.out.println(handle+"Handle");
+			System.out.println(i+". window name: "+handle+" Handle");
+			i++;
 		}
 		threadWait(3);
-		selectTextOfWebElement(textOnPage(textToBeHighlighted));
-		
-		
+		selectTextOfWebElement(textOnPages(textToBeHighlighted));
+
+
 	}
-	
+
 	/**
 	 * Performs double click on the text given.
 	 * @param text Should be a valid text in the title.
@@ -525,10 +547,42 @@ public class Title extends BaseObject
 	 */
 	public void verifyTrialToast()
 	{
+		try
+		{
+			Thread.sleep(6000);
+			JavascriptExecutor Executor = (JavascriptExecutor)driver;
+			Executor.executeScript("arguments[0].setAttribute('style', 'display: block;');" , driver.findElement(By.id("TrialSectionToast")));
+			Thread.sleep(3000);
+		}catch(Exception e1)
+		{
+			e1.printStackTrace();
+		}
+
 		Assert.assertTrue(verifyWebElementIsDisplayed("Title_TrialSection_ToastInstructions_XPATH"));
-		
+
 	}
-	
+
+
+	public void verifyTrialToastSample()
+	{
+		boolean bool = false;
+		for(int i=1;i<=15;i++)
+		{
+			try {
+				WebElement ele = driver.findElement(By.xpath("//div[@id='TrialSectionToastInstructions']"));
+				bool = ele.isDisplayed();
+				break;
+			}
+			catch(Exception e)
+			{
+				System.err.println(e.getMessage());
+			}
+
+		}
+
+		Assert.assertTrue(bool);
+	}
+
 	/**
 	 * Verifies color scheme based on the  given text.
 	 * @param colorScheme Should be one of the following - <b>White On Black, Black On White and Black On Grey</b>.
@@ -541,39 +595,39 @@ public class Title extends BaseObject
 		String fontColor=getCSSValues(titleContent(), "color");
 		System.out.println("BGColor: "+bgColor+"\tFontColor: "+fontColor);
 		switch (colorScheme) {
-			case "White On Black":
-				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(33, 33, 33)"));
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(255, 255, 255)"));
-				}else{
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
-				}
-					
-				break;
-				
-			case "Black On White":
-				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(255, 255, 255)"));
-				}else{
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
-				}
-				
-				break;
-	
-			default:
-				if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(240, 237, 229)"));
-				}else{
-					Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
-					Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(240, 237, 229, 1)"));
-				}
-				break;
+		case "White On Black":
+			if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(255, 255, 255)"));
+			}else{
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
+			}
+
+			break;
+
+		case "Black On White":
+			if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(255, 255, 255)"));
+			}else{
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(255, 255, 255, 1)"));
+			}
+
+			break;
+
+		default:
+			if(System.getProperty("Browser").equalsIgnoreCase("firefox")){
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgb(33, 33, 33)"));
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgb(240, 237, 229)"));
+			}else{
+				Assert.assertTrue(fontColor.equalsIgnoreCase("rgba(33, 33, 33, 1)"));
+				Assert.assertTrue(bgColor.equalsIgnoreCase("rgba(240, 237, 229, 1)"));
+			}
+			break;
 		}
-		
+
 	}
 
 	/**

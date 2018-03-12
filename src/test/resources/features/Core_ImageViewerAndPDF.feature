@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Image viewer and PDF
 
 	Background:

@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Table viewer and annotations
 
 	Background:
@@ -13,7 +13,7 @@ Feature: Table viewer and annotations
 		And I select the "Pages" layout option
 		And I close the options menu
 		When I open the table viewer
-		When I add a note in the color "purple" by selecting the text "Header 1" with the description "Core Regression"
+		When I add a note in the color "purple" by selecting the texts "Header 1" with the description "Core Regression"
 		Then I close the "table" viewer
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
@@ -28,13 +28,13 @@ Feature: Table viewer and annotations
 		And I select the "Scroll" layout option
 		And I close the options menu
 		When I open the table viewer
-		When I add a note in the color "purple" by selecting the text "row 1, column 1" with the description "Core Regression"
-		Then I close the "table" viewer
+		When I add a note in the color "purple" by selecting the texts "row 1, column 1" with the descriptions "Core Regression"
+    	Then I close the "table" viewer
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
 		When I click the note in the annotations menu
 		When I delete the note from the annotations menu
-		Then I verify that the note is not displayed in the annotations menu
+    	Then I verify that the note is not displayed in the annotations menu
 		And I open the options menu
 		And I sign out
 		Then I close the app

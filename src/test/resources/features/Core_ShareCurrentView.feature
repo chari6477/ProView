@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Share current view
 
 	Background:

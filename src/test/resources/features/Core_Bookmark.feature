@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_sanity
 Feature: Bookmarks
 
 	Background:

@@ -1,4 +1,4 @@
-@Core
+@Core_Regression_sanity
 Feature: Annotations color filter
 
 	Scenario: Core_AnnotationsColorFilter
@@ -6,7 +6,7 @@ Feature: Annotations color filter
 		And I sign in
 		Then I verify that I am in the library
 		When I open the title "AutomatedPITA"
-		And I add a highlight in the color "orange" by selecting the text "Editor and Author of Notes"
+		And I add a highlight in the color "orange" by selecting the text "Income Tax Application Rules"
 		And I open the annotations menu
 		Then I verify that the highlight is displayed in the annotations menu
 		When I open the annotations color filter

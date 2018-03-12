@@ -1,6 +1,8 @@
 package com.test.stepdefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import com.util.helpers.DriverFactory;
 import com.util.pages.AnnotationsMenu;
@@ -29,7 +31,16 @@ public class AnnotationsMenuSteps extends DriverFactory
 	public void i_click_the_note_in_the_annotations_menu() throws InterruptedException
 	{
 		annotationsMenu.filterByCategory("Notes");
+		Thread.sleep(4000);
 		annotationsMenu.navigateToAnnotation();
+	}
+	
+	@When("^I click the note in the annotation menu$")
+	public void i_click_the_note_in_the_annotation_menu() throws InterruptedException
+	{
+		annotationsMenu.filterByCategory("Notes");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//div[@id='annotations'][2]")).click();
 	}
 
 	@When("^I delete the bookmark from the annotations menu$")
@@ -49,6 +60,12 @@ public class AnnotationsMenuSteps extends DriverFactory
 	public void i_delete_the_note_from_the_annotations_menu() throws InterruptedException
 	{
 		annotationsMenu.deleteAnnotation();
+	}
+	
+	@When("^I delete the note from the annotation menu$")
+	public void i_delete_the_note_from_the_annotation_menu() throws InterruptedException
+	{
+		annotationsMenu.deleteAnnotations();
 	}
 
 	@When("^I open the annotations color filter$")
@@ -106,7 +123,8 @@ public class AnnotationsMenuSteps extends DriverFactory
 	public void i_open_the_annotations_menu() throws InterruptedException
 	{
 		Thread.sleep(2000);
-		annotationsMenu.openAnnotationsMenu();
+		//annotationsMenu.openAnnotationsMenu();
+		new Actions(driver).doubleClick(new AnnotationsMenu(driver).annotationsMenu()).build().perform();
 	}
 	
 	@When("^I open the displaced annotations menu$")

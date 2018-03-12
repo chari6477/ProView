@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Quick switch
 
 	Background:

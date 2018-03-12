@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Options menu
 
 	Scenario: Core_OptionsMenu

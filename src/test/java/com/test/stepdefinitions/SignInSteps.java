@@ -15,7 +15,8 @@ import cucumber.api.java.en.When;
 
 public class SignInSteps extends DriverFactory
 {
-	WebDriver driver = getDriver();
+	
+	WebDriver driver = getDriver();   
 	AppLauncher launcher = new AppLauncher(driver);
 	SignIn signIn = new SignIn(driver);
 

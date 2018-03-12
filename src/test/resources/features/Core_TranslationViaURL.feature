@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Translation via URL
 
 	Scenario: Core_TranslationViaURL

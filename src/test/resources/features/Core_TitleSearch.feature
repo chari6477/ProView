@@ -1,9 +1,9 @@
-@Core
+@Core_Regression_sanity
 Feature: Title search
 
 	Background:
 		When I launch ProView
-		And I sign in
+		And I sign in 
 		Then I verify that I am in the library
 		When I open the title "AutomatedThesaurus"
 		And I open the options menu
@@ -26,7 +26,7 @@ Feature: Title search
 		Then I verify that the hit number "1" of text "CHIEF JUDGE" is not highlighted
 		When I open the options menu
 		And I sign out
-		Then I close the app
+		Then I close the app                                          
 		
 	Scenario: Core_TitleSearch_Scroll
 		And I select the "Scroll" layout option

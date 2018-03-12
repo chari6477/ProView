@@ -27,6 +27,7 @@ public class URLModifier extends BaseObject
 	public void changeLanguage(String language) throws InterruptedException
 	{
 		Thread.sleep(2000);
-		getWebsite("https://proview." + readProperty("Test_Environment") + ".thomsonreuters.com/library.html?language=" + language);
+		getWebsite("https://proview." + readProperty("Environment") + ".thomsonreuters.com/library.html?language=" + language);
+
 	}
 }

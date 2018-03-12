@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Scrubber
 
 	Background:
@@ -13,7 +13,7 @@ Feature: Scrubber
 		And I select the "Pages" layout option
 		And I close the options menu
 		And I slide the scrubber to the right edge
-		Then I verify that the content contains "Courts"
+		Then I verify that the content contains "courts"
 		When I slide the scrubber to the left edge
 		Then I verify that the content contains "testing qed"
 		When I open the options menu
@@ -24,7 +24,7 @@ Feature: Scrubber
 		And I select the "Scroll" layout option
 		And I close the options menu
 		And I slide the scrubber to the right edge
-		Then I verify that the content contains "Courts"
+		Then I verify that the content contains "courts"
 		When I slide the scrubber to the left edge
 		Then I verify that the content contains "testing qed"
 		When I open the options menu

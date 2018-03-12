@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Layout document
 
 	Scenario: Core_LayoutDocument

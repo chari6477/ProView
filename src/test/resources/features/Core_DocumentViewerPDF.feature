@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Document viewer PDF
 
 	Background:
@@ -13,7 +13,7 @@ Feature: Document viewer PDF
 		And I select the "Pages" layout option
 		And I close the options menu
 		When I click the "PDF Test" link
-		And I save the file
+		And I save the PDF file
 		Then I verify that the PDF generated from "File" contains the text "PDF Test"
 		When I open the options menu
 		And I sign out
@@ -23,7 +23,7 @@ Feature: Document viewer PDF
 		And I select the "Scroll" layout option 
 		And I close the options menu
 		When I click the "PDF Test" link
-		And I save the file
+		And I save the PDF file
 		Then I verify that the PDF generated from "File" contains the text "PDF Test"
 		When I open the options menu
 		And I sign out
