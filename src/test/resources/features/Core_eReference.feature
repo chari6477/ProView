@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression2
 Feature: eReference filter button
 
 	Scenario: Core_eReference

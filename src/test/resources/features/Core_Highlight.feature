@@ -1,4 +1,4 @@
-@Core_Regression_sanity
+@Core_Regression2
 Feature: Highlight
 
 	Background:

@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Share current view
 
 	Background:
@@ -19,7 +19,7 @@ Feature: Share current view
 		And I select the "CurrentView" pdf option
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "CurrentView" contains the text "iitest1w"
 		When I open the options menu
 		And I sign out
@@ -35,7 +35,7 @@ Feature: Share current view
 		And I select the "CurrentView" pdf option
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "CurrentView" contains the text "Rosewood"
 		When I open the options menu
 		And I sign out

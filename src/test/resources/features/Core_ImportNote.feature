@@ -1,4 +1,4 @@
-@Core_Regression_sanity11
+@Core_Regression3
 Feature: Import note
 
 	Background:

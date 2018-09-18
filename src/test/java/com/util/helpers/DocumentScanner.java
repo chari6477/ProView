@@ -97,8 +97,14 @@ public class DocumentScanner extends BaseObject
 		{
 			myFile = new File(readProperty(filepath));
 		}
-
-		PDDocument test = PDDocument.load(myFile);
+		PDDocument test;
+		try {
+			test = PDDocument.load(myFile);
+		}catch(Exception e)
+		{
+			myFile = new File(readProperty(filepath));
+			test = PDDocument.load(myFile);
+		}
 
 		PDFTextStripper textExtract = new PDFTextStripper();
 		String pdfText = textExtract.getText(test);
@@ -120,7 +126,7 @@ public class DocumentScanner extends BaseObject
 		{
 			myFile = new File(properties.readProperty(filePath));
 		}
-		
+
 		FileInputStream inputStream = new FileInputStream(myFile);
 		XMLSlideShow pptshow = new XMLSlideShow(inputStream);
 		XSLFPowerPointExtractor extract = new XSLFPowerPointExtractor(pptshow);

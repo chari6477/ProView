@@ -39,6 +39,23 @@ public class TitleSteps extends DriverFactory
 		title.highlightColor(color);
 
 	}
+	
+	@When("^I add a highlights in the color \"(.*?)\" by selecting the text \"(.*?)\"$")
+	public void i_add_a_highlights_in_the_color_from_to(String color, String textToBeSelected) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		Pattern textToNote = new Pattern(System.getProperty("user.dir")+"\\SikuliCroppedUpImages\\documentTextToHighlight.PNG");
+		try {
+			screen.doubleClick(textToNote);	
+		} catch (FindFailed e) {
+			e.printStackTrace();
+			System.err.println("Waiting for text to be appear");
+		}
+		Thread.sleep(1000);
+		title.addHighlight();
+		title.highlightColor(color);
+
+	}
 
 
 	@When("^I add a highlight in the color \"(.*?)\" by selecting the texts \"(.*?)\"$")

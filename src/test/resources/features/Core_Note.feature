@@ -12,12 +12,12 @@ Feature: Note
 	Scenario: Core_Note_Pages
 		And I select the "Pages" layout option
 		And I close the options menu
-		When I add a note in the color "blue" by selecting the text "Application" with the descriptions "Core Regression"
+		When I add a note in the color "blue" by selecting the text "Income Tax Application Rules" with the description "Core Regression"
 		And I jump to page "21"
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
 		When I click the note in the annotations menu
-		Then I verify that the content contains "Application"
+		Then I verify that the content contains "Rules"
 		When I delete the note from the annotations menu
 		Then I verify that the note is not displayed in the annotations menu
 		When I open the options menu
@@ -27,12 +27,12 @@ Feature: Note
 	Scenario: Core_Note_Scroll
 		And I select the "Scroll" layout option
 		And I close the options menu
-		When I add a note in the color "blue" by selecting the text "Application" with the descriptions "Core Regression"
+		When I add a note in the color "blue" by selecting the text "Income Tax Application Rules" with the description "Core Regression"
 		And I jump to page "21"
 		And I open the annotations menu
 		Then I verify that the note is displayed in the annotations menu
 		When I click the note in the annotations menu
-		Then I verify that the content contains "Application"
+		Then I verify that the content contains "Rules"
 		When I delete the note from the annotations menu
 		Then I verify that the note is not displayed in the annotations menu
 		When I open the options menu

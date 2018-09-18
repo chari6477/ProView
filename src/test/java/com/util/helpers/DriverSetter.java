@@ -51,6 +51,8 @@ public class DriverSetter
 
 		case "firefox":
 			System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true"); 
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
 			FirefoxProfile ffProfile = new FirefoxProfile();
 			ffProfile.setPreference("browser.download.useDownloadDir", true);
 			ffProfile.setPreference("browser.download.dir", System.getProperty("user.home")+"\\Downloads");
@@ -64,7 +66,7 @@ public class DriverSetter
 			firefoxOptions.setProfile(ffProfile);
 			firefoxOptions.setCapability(FirefoxDriver.MARIONETTE, true);
 			
-			firefoxOptions.setHeadless(true);
+			firefoxOptions.setHeadless(false);
 			
 			return new FirefoxDriver(firefoxOptions);
 

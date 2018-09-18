@@ -18,8 +18,7 @@ public class DriverFactory
 	}
 
 	public void destroyDriver()
-	{
-		
+	{	
 		driver.close();
 		try{
 			driver.quit();

@@ -17,7 +17,7 @@ Feature: Image viewer and PDF
 		When I open the Create & Share PDF menu from the "image" viewer
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "ImageViewer" contains the image
 		When I close the "image" viewer
 		And I open the options menu
@@ -32,7 +32,7 @@ Feature: Image viewer and PDF
 		When I open the Create & Share PDF menu from the "image" viewer
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "ImageViewer" contains the image
 		When I close the "image" viewer
 		And I open the options menu

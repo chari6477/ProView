@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression @Sanity
 Feature: Library filter
 
 	Scenario: Core_LibrarySearch

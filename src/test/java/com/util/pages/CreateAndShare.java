@@ -63,7 +63,6 @@ public class CreateAndShare extends BaseObject
 	public void createPDF() throws InterruptedException
 	{
 		clickWebElement(createPDFBtn());
-		threadWait(11);
 	}
 
 	/**

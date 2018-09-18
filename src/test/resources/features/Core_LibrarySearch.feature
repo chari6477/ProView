@@ -1,4 +1,4 @@
-@Core_Regression_sanity 
+@Core_Regression1
 Feature: Library search 
 
 Scenario: Core_LibrarySearch 

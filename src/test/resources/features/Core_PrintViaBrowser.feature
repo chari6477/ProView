@@ -1,4 +1,4 @@
-@Core
+@Core_Regression
 Feature: Print Via Browser
 
 Scenario: Core_PrintViaBrowser

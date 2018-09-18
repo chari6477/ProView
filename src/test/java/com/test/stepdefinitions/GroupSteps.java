@@ -1,5 +1,6 @@
 package com.test.stepdefinitions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.util.helpers.DriverFactory;
@@ -22,5 +23,13 @@ public class GroupSteps extends DriverFactory
 	public void i_open_the_title_from_the_group_menu(String titleName) throws InterruptedException
 	{
 		group.openTitleFromGroupPanel(titleName);
+	}
+	
+	@When("^I open the title \"(.*?)\" from the groupS menu$")
+	public void i_open_the_title_from_the_groupS_menu(String titleName) throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//middle-trunc[contains(text(),'Automated Group - Book - #2')]")).click();
+		Thread.sleep(3000);
 	}
 }

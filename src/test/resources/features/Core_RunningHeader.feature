@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression @Sanity
 Feature: Running header
 
 	Background:
@@ -7,7 +7,7 @@ Feature: Running header
 		Then I verify that I am in the library
 		When I open the title "AutomatedNewberg"
 		And I jump to page "18"
-	#	Then I verify that the content contains "under historic jurisdictional precedents"
+		Then I verify that the content contains "under historic jurisdictional precedents"
 		When I open the options menu
 		And I click on "Layout" option of Options Menu
 		

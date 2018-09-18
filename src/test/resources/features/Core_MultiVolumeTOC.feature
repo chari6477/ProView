@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression @Sanity
 Feature: Multi-volume table of contents
 
 	Background:

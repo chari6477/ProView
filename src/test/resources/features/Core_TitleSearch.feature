@@ -1,4 +1,4 @@
-@Core_Regression_sanity
+@Core_Regression1
 Feature: Title search
 
 	Background:

@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Table viewer and PDF
 
 	Background:
@@ -17,7 +17,7 @@ Feature: Table viewer and PDF
 		When I open the Create & Share PDF menu from the "table" viewer
 		Then I verify that the "CurrentView" option is selected
 		When I click the create and share Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "TableViewer" contains the text "row 2"
 		Then I close the "table" viewer
 		And I open the options menu
@@ -32,7 +32,7 @@ Feature: Table viewer and PDF
 		When I open the Create & Share PDF menu from the "table" viewer
 		Then I verify that the "CurrentView" option is selected
 		When I click the create and share Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "TableViewer" contains the text "row 2"
 		Then I close the "table" viewer
 		And I open the options menu

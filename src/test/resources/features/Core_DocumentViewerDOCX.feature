@@ -1,4 +1,4 @@
-@Core_Regression_sanity
+@Core_Regression1
 Feature: Document viewer DOCX
 
 	Background:
@@ -13,7 +13,7 @@ Feature: Document viewer DOCX
 		And I select the "Pages" layout option
 		And I close the options menu
 		When I click the "DOCX Test" link
-		And I save the file
+		And I saves the file
 		Then I verify that the DOCX "File" contains the text "DOCX Test"
 		When I open the options menu
 		And I sign out
@@ -23,7 +23,7 @@ Feature: Document viewer DOCX
 		And I select the "Scroll" layout option 
 		And I close the options menu
 		When I click the "DOCX Test" link 
-		And I save the file
+		And I saves the file
 		Then I verify that the DOCX "File" contains the text "DOCX Test"
 		When I open the options menu
 		And I sign out

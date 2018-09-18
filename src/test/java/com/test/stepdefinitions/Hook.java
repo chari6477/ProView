@@ -36,9 +36,6 @@ public class Hook extends DriverFactory{
 		{
 			System.err.println(scenario.getName() +    ": Scenario is failed.");
 			scenario.embed(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES), "image/png");
-			/*try {
-				driver.close();
-			}catch(Exception e) {}*/
 		}
 
 		System.out.println("------------------------------------------------------------");

@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Table viewer and annotations
 
 	Background:

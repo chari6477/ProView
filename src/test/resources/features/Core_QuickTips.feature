@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression @Sanity
 Feature: Quick tips
 
 	Scenario: Core_QuickTips

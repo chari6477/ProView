@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression @Sanity
 Feature: Translation via URL
 
 	Scenario: Core_TranslationViaURL

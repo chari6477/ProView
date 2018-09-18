@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1 @Demo1
 Feature: Options menu
 
 	Scenario: Core_OptionsMenu

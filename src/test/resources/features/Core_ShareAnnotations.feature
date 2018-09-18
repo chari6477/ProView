@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Share annotations
 
 	Background:
@@ -17,7 +17,7 @@ Feature: Share annotations
 		And I select the "CurrentView" pdf option
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "CurrentView" contains the text "Fourth Edition"
 		When I open the options menu
 		And I sign out
@@ -31,8 +31,8 @@ Feature: Share annotations
 		And I select the "CurrentView" pdf option
 		Then I verify that the "CurrentView" option is selected
 		When I click the Next button
-		And I save the PDF
-		Then I verify that the PDF generated from "CurrentView" contains the text "Regression"
+		And I save the PDF file
+		Then I verify that the PDF generated from "CurrentView" contains the text "Fourth Edition"
 		When I open the options menu
 		And I sign out
 		Then I close the app

@@ -1,4 +1,4 @@
-@Core_Regression_sanity
+@Core_Regression @Sanity
 Feature: List view
 
 	Scenario: Core_ListView

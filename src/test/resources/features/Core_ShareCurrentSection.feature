@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Share current section
 	Background:
 		When I launch ProView
@@ -18,7 +18,7 @@ Feature: Share current section
 		And I select the "CurrentTOCSection" pdf option
 		Then I verify that the "CurrentTOCSection" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "CurrentTOCSection" contains the text "iitest1w"
 		When I open the options menu
 		And I sign out
@@ -34,8 +34,8 @@ Feature: Share current section
 		And I select the "CurrentTOCSection" pdf option 
 		Then I verify that the "CurrentTOCSection" option is selected
 		When I click the Next button
-		And I save the PDF
-		Then I verify that the PDF generated from "CurrentTOCSection" contains the text "On December 1, 2003"
+		And I save the PDF file
+		Then I verify that the PDF generated from "CurrentTOCSection" contains the text "Automated Newberg"
 		When I open the options menu
 		And I sign out
 		Then I close the app

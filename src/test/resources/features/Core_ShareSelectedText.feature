@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Share selected text
 
 	Background:
@@ -18,7 +18,7 @@ Feature: Share selected text
 		And I click the "Share" option
 		Then I verify that the "SelectedText" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "SelectedText" contains the text "Text"
 		When I open the options menu
 		And I sign out
@@ -33,7 +33,7 @@ Feature: Share selected text
 		And I click the "Share" option
 		Then I verify that the "SelectedText" option is selected
 		When I click the Next button
-		And I save the PDF
+		And I save the PDF file
 		Then I verify that the PDF generated from "SelectedText" contains the text "Text"
 		When I open the options menu
 		And I sign out

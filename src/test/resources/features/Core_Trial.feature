@@ -1,4 +1,4 @@
-@Core_Regression
+@Core_Regression1
 Feature: Trial
 
 	Scenario: Core_Trial
